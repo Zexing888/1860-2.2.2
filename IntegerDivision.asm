@@ -37,13 +37,6 @@ M=D
 @LOOP
 D;JMP
 
-(EQUAL_0)
-@R2
-M=M+1
-@R3
-M=0
-@END
-D;JMP
 
 (END_LOOP)
 @R5
@@ -53,7 +46,7 @@ M=D
 @END
 D;JMP
 
-(Divison_fail)
+(Division_fail)
 @R2
 M=0
 @R4
