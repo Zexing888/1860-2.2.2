@@ -1,5 +1,10 @@
 @R0
 D=M
+@Division_fail
+D;JEQ
+
+@R0
+D=M
 @R1
 D=D-M
 @Division_fail
