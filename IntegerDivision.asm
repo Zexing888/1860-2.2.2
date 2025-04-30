@@ -27,7 +27,18 @@ D=M
 D=M-D
 @END_LOOP
 D;JLT
+@EQUAL_0
+D;JEQ
+
 @LOOP
+D;JMP
+
+(EQUAL_0)
+@R2
+M=M+1
+@R3
+M=0
+@END
 D;JMP
 
 (END_LOOP)
