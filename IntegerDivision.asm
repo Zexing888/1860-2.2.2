@@ -1,3 +1,8 @@
+@R1
+D=M
+@Divisor_0
+D;JEQ
+
 @R0
 D=M
 @Division_fail
@@ -46,11 +51,15 @@ M=D
 @END
 D;JMP
 
+(Divisor_0)
+@R4
+M=1
+
 (Division_fail)
 @R2
 M=0
 @R4
-M=1
+M=0
 @R0
 D=M
 @R3
