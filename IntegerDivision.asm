@@ -146,4 +146,4 @@ M=-M // negate the remainder
 
 (END)
 @END
-D;JMP // The program ends.
+D;JMP // The program ends
