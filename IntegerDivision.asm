@@ -1,30 +1,30 @@
-//Judge whether the Dividend is 0
+// Judge whether the Dividend is 0
 @R1 
 D=M // D = RAM[R1]
-//If D = RAM[R1] = 0, jump to Dividend_0
+// If D = RAM[R1] = 0, jump to Dividend_0
 @Dividend_0
 D;JEQ
 
-//Judge whether the divisor is 0
+// Judge whether the divisor is 0
 @R0
-D=M //D = RAM[R0]
-//If D = RAM[R0] = 0, jump to Division_fail
+D=M // D = RAM[R0]
+// If D = RAM[R0] = 0, jump to Division_fail
 @Division_fail
 D;JEQ
 
-//Copy the value of R0 to R6, because the value of R0 is immutable
+// Copy the value of R0 to R6, because the value of R0 is immutable
 @R0
 D=M // D = RAM[R0]
 @R6
 M=D // RAM[R6] = D = RAM{R0}
 
-//Copy the value of R1 to R7, because the value of R1 is immutable
+// Copy the value of R1 to R7, because the value of R1 is immutable
 @R1
 D=M
 @R7
 M=D
 
-//Calculate the absolute value of R6 and put the value in R6. If R6 is originally positive, R8=0, If it is negative, R8=1.
+// Calculate the absolute value of R6 and put the value in R6. If R6 is originally positive, R8=0, If it is negative, R8=1.
 @R6
 D=M // D = RAM[R6]
 @R8
@@ -75,7 +75,7 @@ M=0 // RAM[R2] = 0
 @R5
 D=M // D = RAM[R5] 
 @R7
-D=D-M D = RAM[R5] - RAM[R7]
+D=D-M // D = RAM[R5] - RAM[R7]
 @END_LOOP
 D;JLT // If RAM[R5] < RAM[R7], jump out of the cycle
 
@@ -84,25 +84,25 @@ M=M+1 // quotient + 1
 @R5
 D=M // D = RAM[R5]
 @R7
-D=D-M //D = RAM[R5] - RAM[R7]
+D=D-M // D = RAM[R5] - RAM[R7]
 @R5
-M=D //update the value of R5.
+M=D // update the value of R5.
 @LOOP
-D;JMP //go back to the cycle
+D;JMP // go back to the cycle
 
 // Save the remainder
 (END_LOOP)
 @R5
-D=M //D = RAM[R5]
+D=M // D = RAM[R5]
 @R3
-M=D //RAM[R3] = RAM[R5]
+M=D // RAM[R3] = RAM[R5]
 @LAST
 D;JMP
 
-//When dividend is 0
+// When dividend is 0
 (Dividend_0)
 @R4
-M=1 //RAM[R4] = 1
+M=1 // RAM[R4] = 1
 @END
 D;JMP
 
@@ -124,9 +124,9 @@ D=M // D = RAM[R8]
 @R9
 D=D-M // D = RAM[R8] - RAM[R9]
 @SAME
-D;JEQ //If RAM[R8] = RAM[R9],jump to SAME
+D;JEQ // If RAM[R8] = RAM[R9],jump to SAME
 @R2
-M=-M //negate the quotient
+M=-M // negate the quotient
 @REMINDER
 D;JMP
 
@@ -136,7 +136,7 @@ D;JMP
 @R8
 D=M // D = RAM[R8]
 @POSITIVE1
-D;JGT //If X is positive, jump to POSITIVE1
+D;JGT // If X is positive, jump to POSITIVE1
 @END
 D;JMP
 
